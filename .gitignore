@@ -9,9 +9,10 @@ env/
 
 # Data & models (large, downloaded/generated)
 data/raw/
-data/raw_plantdoc/
+data/plantdoc/
 data/processed/
 data/processed_plantdoc/
+data/processed_sample
 models/*.h5
 models/*.keras
 models/*.tflite
