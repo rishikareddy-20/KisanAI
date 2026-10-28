@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Data & models (large, downloaded/generated)
+data/raw/
+data/raw_plantdoc/
+data/processed/
+data/processed_plantdoc/
+models/*.h5
+models/*.keras
+models/*.tflite
+models/checkpoints/
+backend/rag/index/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Env & secrets
+.env
+*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
