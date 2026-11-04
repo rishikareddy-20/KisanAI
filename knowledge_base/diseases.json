@@ -1,0 +1,659 @@
+{
+  "version": "0.2.0",
+  "note": "Curated agronomy knowledge base grounding the KisanAI advisory layer. English and Hindi (hi) content is provided for every non-healthy class so advice is served fully in the chosen language. Extend by adding classes/translations here.",
+  "languages": ["en", "hi"],
+  "labels": {
+    "section": {
+      "en": {"summary": "What it is", "symptoms": "Symptoms to look for", "organic": "Organic / low-cost treatment", "chemical": "Chemical treatment", "prevention": "Prevention", "severity": "Severity", "confidence": "Model confidence"},
+      "hi": {"summary": "यह क्या है", "symptoms": "पहचानने के लक्षण", "organic": "जैविक / कम लागत उपचार", "chemical": "रासायनिक उपचार", "prevention": "रोकथाम", "severity": "गंभीरता", "confidence": "मॉडल का विश्वास"}
+    },
+    "uncertain": {
+      "en": "The model is not confident about this diagnosis. Please consult a local agricultural extension officer or Krishi Vigyan Kendra before applying any treatment.",
+      "hi": "मॉडल इस निदान के बारे में निश्चित नहीं है। कोई भी उपचार करने से पहले कृपया स्थानीय कृषि अधिकारी या कृषि विज्ञान केंद्र से सलाह लें।",
+      "severity": "unknown"
+    },
+    "healthy": {
+      "en": "The leaf appears healthy. No treatment is needed. Continue good field practices and keep monitoring.",
+      "hi": "पत्ती स्वस्थ दिख रही है। किसी उपचार की आवश्यकता नहीं है। अच्छी खेती जारी रखें और निगरानी करते रहें।"
+    },
+    "safety": {
+      "en": "Always read the pesticide label, wear gloves and a mask, follow the stated dose, and observe the pre-harvest interval.",
+      "hi": "हमेशा कीटनाशक का लेबल पढ़ें, दस्ताने और मास्क पहनें, बताई गई मात्रा का पालन करें और कटाई-पूर्व अंतराल का ध्यान रखें।"
+    }
+  },
+  "classes": {
+    "Tomato___Late_blight": {
+      "crop": "Tomato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Tomato — Late Blight",
+          "summary": "A fast-spreading fungal-like disease (Phytophthora infestans) that thrives in cool, wet, humid weather and can destroy a crop within days.",
+          "symptoms": ["Greasy grey-green to brown patches on leaves, often starting at the tips/edges", "White fuzzy mould on the underside of leaves in humid mornings", "Dark brown lesions on stems", "Firm brown rot on fruit"],
+          "organic": ["Remove and destroy infected leaves/plants immediately (do not compost)", "Spray copper-based fungicide (e.g. copper oxychloride) every 7 days", "Improve airflow: wider spacing, remove lower leaves", "Avoid overhead watering; water at the base in the morning"],
+          "chemical": ["Mancozeb 75% WP @ 2 g/litre as a protective spray", "For active infection: Cymoxanil + Mancozeb @ 2 g/litre, repeat after 7-10 days", "Rotate fungicide groups to avoid resistance"],
+          "prevention": ["Use certified disease-free / resistant varieties", "Avoid dense planting and overhead irrigation", "Do not plant tomato after potato in the same field", "Scout fields daily during cool wet spells"],
+          "severity": "high"
+        },
+        "hi": {
+          "name": "टमाटर — पछेती झुलसा (लेट ब्लाइट)",
+          "summary": "यह ठंडे, नम और आर्द्र मौसम में तेज़ी से फैलने वाला रोग (फाइटोफ्थोरा इन्फेस्टैन्स) है, जो कुछ ही दिनों में पूरी फसल नष्ट कर सकता है।",
+          "symptoms": ["पत्तियों पर चिकने भूरे-हरे से भूरे धब्बे, अक्सर किनारों से शुरू", "आर्द्र सुबह में पत्ती की निचली सतह पर सफेद रुई जैसी फफूँद", "तनों पर गहरे भूरे घाव", "फल पर सख्त भूरा सड़ाव"],
+          "organic": ["संक्रमित पत्तियों/पौधों को तुरंत हटाकर नष्ट करें (खाद में न डालें)", "हर 7 दिन में कॉपर-आधारित फफूँदनाशी (कॉपर ऑक्सीक्लोराइड) का छिड़काव करें", "हवा का प्रवाह बढ़ाएँ: पौधों के बीच दूरी रखें, नीचे की पत्तियाँ हटाएँ", "ऊपर से सिंचाई न करें; सुबह जड़ के पास पानी दें"],
+          "chemical": ["मैंकोज़ेब 75% WP @ 2 ग्राम/लीटर सुरक्षात्मक छिड़काव", "सक्रिय संक्रमण पर: साइमोक्सानिल + मैंकोज़ेब @ 2 ग्राम/लीटर, 7-10 दिन बाद दोहराएँ", "प्रतिरोध से बचने के लिए फफूँदनाशी बदलते रहें"],
+          "prevention": ["प्रमाणित रोग-मुक्त / प्रतिरोधी किस्में उपयोग करें", "घना रोपण और ऊपर से सिंचाई न करें", "एक ही खेत में आलू के बाद टमाटर न लगाएँ", "ठंडे-नम मौसम में रोज़ खेत की जाँच करें"],
+          "severity": "high"
+        }
+      }
+    },
+    "Tomato___Early_blight": {
+      "crop": "Tomato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Tomato — Early Blight",
+          "summary": "A common fungal disease (Alternaria solani) favoured by warm, humid weather, usually starting on older lower leaves.",
+          "symptoms": ["Brown spots with concentric rings ('target board' pattern) on lower leaves", "Yellow halo around spots", "Leaves yellow, dry and drop", "Dark sunken lesions on stem and fruit near the stalk"],
+          "organic": ["Remove affected lower leaves and destroy them", "Spray neem oil or copper oxychloride at first sign", "Mulch to stop soil splashing spores onto leaves", "Ensure balanced nutrition; avoid stress"],
+          "chemical": ["Mancozeb 75% WP @ 2 g/litre, or Chlorothalonil @ 2 g/litre", "Repeat every 10-12 days in humid weather", "Alternate actives to prevent resistance"],
+          "prevention": ["Rotate crops (avoid tomato/potato back-to-back)", "Stake plants and prune lower leaves for airflow", "Water at the base, keep foliage dry", "Use resistant varieties where available"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "टमाटर — अगेती झुलसा (अर्ली ब्लाइट)",
+          "summary": "गर्म, आर्द्र मौसम में पनपने वाला आम फफूँद रोग (अल्टरनेरिया सोलानी), आमतौर पर पुरानी निचली पत्तियों से शुरू होता है।",
+          "symptoms": ["निचली पत्तियों पर संकेंद्रित छल्लों वाले भूरे धब्बे ('निशाना' जैसा)", "धब्बों के चारों ओर पीला घेरा", "पत्तियाँ पीली होकर सूखकर गिरना", "तने और फल पर गहरे धँसे घाव"],
+          "organic": ["प्रभावित निचली पत्तियाँ हटाकर नष्ट करें", "पहले लक्षण पर नीम तेल या कॉपर ऑक्सीक्लोराइड छिड़कें", "मल्च करें ताकि मिट्टी से बीजाणु पत्तियों पर न उछलें", "संतुलित पोषण दें; तनाव से बचाएँ"],
+          "chemical": ["मैंकोज़ेब 75% WP @ 2 ग्राम/लीटर, या क्लोरोथैलोनिल @ 2 ग्राम/लीटर", "आर्द्र मौसम में हर 10-12 दिन में दोहराएँ", "प्रतिरोध रोकने हेतु दवाएँ बदलें"],
+          "prevention": ["फसल चक्र अपनाएँ (टमाटर/आलू लगातार न लगाएँ)", "पौधों को सहारा दें और निचली पत्तियाँ छाँटें", "जड़ के पास पानी दें, पत्तियाँ सूखी रखें", "उपलब्ध हो तो प्रतिरोधी किस्में लगाएँ"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Tomato___Bacterial_spot": {
+      "crop": "Tomato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Tomato — Bacterial Spot",
+          "summary": "A bacterial disease (Xanthomonas) spread by rain-splash and handling, worse in warm, wet weather.",
+          "symptoms": ["Small dark water-soaked spots on leaves that turn brown/black", "Spots may have a yellow halo", "Scabby raised spots on fruit", "Leaf drop in severe cases"],
+          "organic": ["Remove and destroy infected debris", "Copper-based bactericide sprays (copper hydroxide)", "Avoid working in the field when plants are wet", "Use pathogen-free seed and transplants"],
+          "chemical": ["Copper hydroxide + Mancozeb tank mix as per label", "Streptomycin-based sprays only where locally approved", "Repeat after rain events"],
+          "prevention": ["Hot-water or certified seed treatment", "Rotate away from tomato/pepper for 2-3 years", "Avoid overhead irrigation", "Disinfect tools and hands"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "टमाटर — जीवाणु धब्बा (बैक्टीरियल स्पॉट)",
+          "summary": "बारिश के छींटों और छूने से फैलने वाला जीवाणु रोग (ज़ैंथोमोनास), गर्म और नम मौसम में अधिक गंभीर।",
+          "symptoms": ["पत्तियों पर छोटे गहरे जलसिक्त धब्बे जो भूरे/काले हो जाते हैं", "धब्बों के चारों ओर पीला घेरा हो सकता है", "फल पर खुरदरे उभरे धब्बे", "गंभीर स्थिति में पत्तियाँ गिरना"],
+          "organic": ["संक्रमित अवशेष हटाकर नष्ट करें", "कॉपर-आधारित जीवाणुनाशी (कॉपर हाइड्रॉक्साइड) का छिड़काव करें", "पौधे गीले हों तब खेत में काम न करें", "रोगमुक्त बीज और पौध का उपयोग करें"],
+          "chemical": ["लेबल अनुसार कॉपर हाइड्रॉक्साइड + मैंकोज़ेब मिश्रण", "स्ट्रेप्टोमाइसिन आधारित छिड़काव केवल जहाँ स्थानीय रूप से स्वीकृत हो", "बारिश के बाद दोहराएँ"],
+          "prevention": ["गर्म पानी या प्रमाणित बीज उपचार", "टमाटर/मिर्च से 2-3 साल फसल चक्र बदलें", "ऊपर से सिंचाई से बचें", "औज़ार और हाथ कीटाणुरहित करें"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Tomato___Leaf_Mold": {
+      "crop": "Tomato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Tomato — Leaf Mold",
+          "summary": "A fungal disease (Passalora fulva) common in humid, poorly ventilated conditions such as polyhouses.",
+          "symptoms": ["Pale yellow spots on the upper leaf surface", "Olive-green to brown velvety mould on the underside", "Leaves curl, wither and drop", "Reduced fruit set"],
+          "organic": ["Increase ventilation and reduce humidity", "Remove affected leaves", "Spray copper oxychloride or a biofungicide (Bacillus subtilis)"],
+          "chemical": ["Chlorothalonil or Mancozeb @ 2 g/litre", "Difenoconazole where labelled", "Repeat at 10-day intervals"],
+          "prevention": ["Wider spacing and good airflow", "Avoid leaf wetness; ventilate polyhouses", "Resistant varieties", "Sanitation between crops"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "टमाटर — पत्ती फफूँद (लीफ मोल्ड)",
+          "summary": "नम और कम हवादार परिस्थितियों जैसे पॉलीहाउस में आम फफूँद रोग (पासलोरा फुल्वा)।",
+          "symptoms": ["पत्ती की ऊपरी सतह पर हल्के पीले धब्बे", "निचली सतह पर जैतूनी-हरी से भूरी मखमली फफूँद", "पत्तियाँ मुड़कर मुरझाकर गिरना", "फल कम बनना"],
+          "organic": ["हवा का प्रवाह बढ़ाएँ और नमी घटाएँ", "प्रभावित पत्तियाँ हटाएँ", "कॉपर ऑक्सीक्लोराइड या जैव-फफूँदनाशी (बैसिलस सबटिलिस) छिड़कें"],
+          "chemical": ["क्लोरोथैलोनिल या मैंकोज़ेब @ 2 ग्राम/लीटर", "जहाँ लेबल हो वहाँ डाइफेनोकोनाज़ोल", "10 दिन के अंतराल पर दोहराएँ"],
+          "prevention": ["पौधों के बीच अधिक दूरी और अच्छी हवा", "पत्ती गीली न रहे; पॉलीहाउस हवादार रखें", "प्रतिरोधी किस्में", "फसलों के बीच सफाई"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Tomato___Yellow_Leaf_Curl_Virus": {
+      "crop": "Tomato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Tomato — Yellow Leaf Curl Virus",
+          "summary": "A viral disease transmitted by whiteflies; there is no cure once infected, so control targets the whitefly vector.",
+          "symptoms": ["Upward curling and cupping of leaves", "Yellowing between veins, stunted growth", "Flower drop and severe yield loss", "Bushy, stunted appearance"],
+          "organic": ["Remove and destroy infected plants early", "Use yellow sticky traps for whiteflies", "Neem oil sprays to suppress whitefly", "Reflective/silver mulch to repel whitefly"],
+          "chemical": ["Manage whitefly with recommended insecticides (e.g. imidacloprid) as per label", "Rotate insecticide groups to avoid resistance"],
+          "prevention": ["Use resistant/tolerant varieties", "Raise seedlings under insect-proof net", "Control weeds that host whitefly", "Avoid overlapping tomato crops"],
+          "severity": "high"
+        },
+        "hi": {
+          "name": "टमाटर — पीला पत्ती मरोड़ विषाणु (यलो लीफ कर्ल वायरस)",
+          "summary": "सफेद मक्खी से फैलने वाला विषाणु रोग; संक्रमण के बाद इलाज नहीं है, इसलिए नियंत्रण सफेद मक्खी पर केंद्रित होता है।",
+          "symptoms": ["पत्तियों का ऊपर की ओर मुड़ना और कटोरी जैसा होना", "शिराओं के बीच पीलापन, बौना विकास", "फूल गिरना और भारी उपज हानि", "झाड़ीनुमा, बौनी दिखावट"],
+          "organic": ["संक्रमित पौधे जल्दी निकालकर नष्ट करें", "सफेद मक्खी के लिए पीले चिपचिपे जाल लगाएँ", "सफेद मक्खी रोकने हेतु नीम तेल छिड़कें", "सफेद मक्खी भगाने हेतु परावर्तक/चाँदी मल्च"],
+          "chemical": ["लेबल अनुसार अनुशंसित कीटनाशकों (जैसे इमिडाक्लोप्रिड) से सफेद मक्खी नियंत्रित करें", "प्रतिरोध से बचने हेतु कीटनाशक समूह बदलें"],
+          "prevention": ["प्रतिरोधी/सहनशील किस्में उपयोग करें", "पौध कीट-रोधी जाल के नीचे तैयार करें", "सफेद मक्खी को पालने वाले खरपतवार नियंत्रित करें", "टमाटर की फसलें ओवरलैप न करें"],
+          "severity": "high"
+        }
+      }
+    },
+    "Tomato___healthy": {"crop": "Tomato", "healthy": true, "translations": {"en": {"name": "Tomato — Healthy", "severity": "none"}, "hi": {"name": "टमाटर — स्वस्थ", "severity": "none"}}},
+    "Potato___Late_blight": {
+      "crop": "Potato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Potato — Late Blight",
+          "summary": "The historically devastating blight (Phytophthora infestans); spreads explosively in cool, wet, humid weather.",
+          "symptoms": ["Dark water-soaked lesions on leaves with a pale green halo", "White mould on leaf undersides in humid conditions", "Rapid browning and collapse of foliage", "Reddish-brown dry rot in tubers"],
+          "organic": ["Rogue out and destroy infected plants", "Preventive copper oxychloride sprays", "Earth-up tubers well to protect them", "Ensure good drainage and airflow"],
+          "chemical": ["Protective: Mancozeb 75% WP @ 2 g/litre", "Curative: Cymoxanil + Mancozeb or Metalaxyl + Mancozeb @ 2 g/litre", "Repeat every 7-10 days in wet weather"],
+          "prevention": ["Plant certified disease-free seed tubers", "Use resistant varieties", "Avoid excess nitrogen and dense canopy", "Destroy volunteer/cull potatoes"],
+          "severity": "high"
+        },
+        "hi": {
+          "name": "आलू — पछेती झुलसा (लेट ब्लाइट)",
+          "summary": "ऐतिहासिक रूप से विनाशकारी झुलसा (फाइटोफ्थोरा इन्फेस्टैन्स); ठंडे, नम, आर्द्र मौसम में बहुत तेज़ी से फैलता है।",
+          "symptoms": ["पत्तियों पर हल्के हरे घेरे के साथ गहरे जलसिक्त घाव", "आर्द्रता में पत्ती की निचली सतह पर सफेद फफूँद", "पत्तियाँ तेज़ी से भूरी होकर गिरना", "कंदों में लाल-भूरा सूखा सड़ाव"],
+          "organic": ["संक्रमित पौधे निकालकर नष्ट करें", "रोकथाम हेतु कॉपर ऑक्सीक्लोराइड छिड़काव", "कंदों की अच्छी मिट्टी चढ़ाई करें", "अच्छी जल निकासी और हवा सुनिश्चित करें"],
+          "chemical": ["सुरक्षात्मक: मैंकोज़ेब 75% WP @ 2 ग्राम/लीटर", "उपचारात्मक: साइमोक्सानिल + मैंकोज़ेब या मेटालैक्सिल + मैंकोज़ेब @ 2 ग्राम/लीटर", "नम मौसम में हर 7-10 दिन दोहराएँ"],
+          "prevention": ["प्रमाणित रोग-मुक्त बीज कंद लगाएँ", "प्रतिरोधी किस्में उपयोग करें", "अधिक नाइट्रोजन और घनी छतरी से बचें", "स्वतः उगे/छोड़े आलू नष्ट करें"],
+          "severity": "high"
+        }
+      }
+    },
+    "Potato___Early_blight": {
+      "crop": "Potato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Potato — Early Blight",
+          "summary": "A fungal disease (Alternaria solani) common on stressed or older plants in warm, humid weather.",
+          "symptoms": ["Concentric-ring brown spots on lower/older leaves", "Yellowing of surrounding tissue", "Premature defoliation", "Dark, dry sunken lesions on tubers"],
+          "organic": ["Remove lower affected leaves", "Neem or copper sprays at first sign", "Maintain balanced fertility and moisture", "Mulch to reduce soil splash"],
+          "chemical": ["Mancozeb 75% WP @ 2 g/litre or Chlorothalonil", "Repeat every 10-12 days", "Alternate fungicide groups"],
+          "prevention": ["Crop rotation", "Adequate nutrition and irrigation to avoid stress", "Certified seed", "Destroy crop debris after harvest"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "आलू — अगेती झुलसा (अर्ली ब्लाइट)",
+          "summary": "गर्म, नम मौसम में तनावग्रस्त या पुराने पौधों पर आम फफूँद रोग (अल्टरनेरिया सोलानी)।",
+          "symptoms": ["निचली/पुरानी पत्तियों पर संकेंद्रित छल्लों वाले भूरे धब्बे", "आसपास के ऊतक का पीला होना", "समय से पहले पत्तियाँ गिरना", "कंदों पर गहरे, सूखे धँसे घाव"],
+          "organic": ["निचली प्रभावित पत्तियाँ हटाएँ", "पहले लक्षण पर नीम या कॉपर छिड़काव", "संतुलित पोषण और नमी बनाए रखें", "मल्च करें ताकि मिट्टी के छींटे कम हों"],
+          "chemical": ["मैंकोज़ेब 75% WP @ 2 ग्राम/लीटर या क्लोरोथैलोनिल", "हर 10-12 दिन में दोहराएँ", "फफूँदनाशी समूह बदलते रहें"],
+          "prevention": ["फसल चक्र", "तनाव से बचने हेतु पर्याप्त पोषण और सिंचाई", "प्रमाणित बीज", "कटाई के बाद फसल अवशेष नष्ट करें"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Potato___healthy": {"crop": "Potato", "healthy": true, "translations": {"en": {"name": "Potato — Healthy", "severity": "none"}, "hi": {"name": "आलू — स्वस्थ", "severity": "none"}}},
+    "Apple___Apple_scab": {
+      "crop": "Apple", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Apple — Apple Scab",
+          "summary": "A fungal disease (Venturia inaequalis) causing scabby lesions on leaves and fruit, worse in wet springs.",
+          "symptoms": ["Olive-green to black velvety spots on leaves", "Puckered, cracked, scabby fruit", "Early leaf drop", "Deformed fruit"],
+          "organic": ["Rake and destroy fallen leaves to break the cycle", "Sulfur or copper sprays from bud break", "Prune for better light and airflow"],
+          "chemical": ["Mancozeb or Dodine at green-tip and petal-fall stages", "Difenoconazole where labelled", "Follow a spray schedule tied to wet periods"],
+          "prevention": ["Resistant cultivars", "Orchard sanitation (remove leaf litter)", "Prune to open the canopy", "Avoid prolonged leaf wetness"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "सेब — सेब पपड़ी (एप्पल स्कैब)",
+          "summary": "फफूँद रोग (वेंचुरिया इनइक्वालिस) जो पत्तियों और फल पर पपड़ीदार घाव करता है, गीले वसंत में अधिक।",
+          "symptoms": ["पत्तियों पर जैतूनी-हरे से काले मखमली धब्बे", "सिकुड़े, फटे, पपड़ीदार फल", "जल्दी पत्ती गिरना", "विकृत फल"],
+          "organic": ["गिरी पत्तियाँ इकट्ठा कर नष्ट करें ताकि चक्र टूटे", "कली फूटने से गंधक या कॉपर छिड़काव", "बेहतर प्रकाश और हवा हेतु छँटाई करें"],
+          "chemical": ["हरी-नोक और पंखुड़ी-गिरने अवस्था पर मैंकोज़ेब या डोडाइन", "जहाँ लेबल हो वहाँ डाइफेनोकोनाज़ोल", "गीले समय से जुड़ा छिड़काव कार्यक्रम अपनाएँ"],
+          "prevention": ["प्रतिरोधी किस्में", "बगीचे की सफाई (पत्ती कचरा हटाएँ)", "छतरी खोलने हेतु छँटाई", "पत्ती लंबे समय गीली न रहने दें"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Apple___Black_rot": {
+      "crop": "Apple", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Apple — Black Rot",
+          "summary": "A fungal disease (Botryosphaeria obtusa) affecting leaves, fruit and bark, spreading from cankers.",
+          "symptoms": ["'Frog-eye' leaf spots (tan centre, dark margin)", "Black, firm, rotting fruit", "Sunken cankers on branches", "Leaf yellowing and drop"],
+          "organic": ["Prune out and destroy cankers and mummified fruit", "Copper sprays during the season", "Improve orchard sanitation"],
+          "chemical": ["Captan or Mancozeb on a protective schedule", "Thiophanate-methyl where labelled"],
+          "prevention": ["Remove dead wood and mummies in winter", "Manage wounds and cankers", "Maintain tree vigour", "Good airflow via pruning"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "सेब — काला सड़न (ब्लैक रॉट)",
+          "summary": "फफूँद रोग (बॉट्रियोस्फेरिया ऑब्टूसा) जो पत्तियों, फल और छाल को प्रभावित करता है, कैंकर से फैलता है।",
+          "symptoms": ["'मेंढक-आँख' पत्ती धब्बे (हल्का केंद्र, गहरा किनारा)", "काले, सख्त, सड़ते फल", "शाखाओं पर धँसे कैंकर", "पत्ती पीली होकर गिरना"],
+          "organic": ["कैंकर और सूखे-सड़े फल छाँटकर नष्ट करें", "मौसम के दौरान कॉपर छिड़काव", "बगीचे की सफाई सुधारें"],
+          "chemical": ["सुरक्षात्मक कार्यक्रम पर कैप्टान या मैंकोज़ेब", "जहाँ लेबल हो वहाँ थायोफेनेट-मिथाइल"],
+          "prevention": ["सर्दियों में मृत लकड़ी और सूखे फल हटाएँ", "घाव और कैंकर प्रबंधित करें", "पेड़ की शक्ति बनाए रखें", "छँटाई से अच्छी हवा"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Apple___healthy": {"crop": "Apple", "healthy": true, "translations": {"en": {"name": "Apple — Healthy", "severity": "none"}, "hi": {"name": "सेब — स्वस्थ", "severity": "none"}}},
+    "Corn___Common_rust": {
+      "crop": "Corn", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Corn (Maize) — Common Rust",
+          "summary": "A fungal disease (Puccinia sorghi) producing rust-coloured pustules, favoured by cool, humid weather.",
+          "symptoms": ["Small cinnamon-brown pustules on both leaf surfaces", "Pustules turn dark as they mature", "Severe cases: yellowing and drying of leaves", "Reduced grain fill"],
+          "organic": ["Usually minor on resistant hybrids; monitor first", "Remove heavily infected lower leaves in small plots", "Ensure balanced nutrition"],
+          "chemical": ["Fungicides (e.g. Mancozeb, or triazoles) only if severe and early", "Follow label timing at tasseling"],
+          "prevention": ["Plant resistant hybrids", "Avoid very late planting", "Field sanitation", "Balanced fertilisation"],
+          "severity": "low"
+        },
+        "hi": {
+          "name": "मक्का — सामान्य रतुआ (कॉमन रस्ट)",
+          "summary": "फफूँद रोग (पक्सीनिया सोरघी) जो रतुआ-रंग की फुंसियाँ बनाता है, ठंडे-नम मौसम में अधिक।",
+          "symptoms": ["पत्ती की दोनों सतहों पर छोटी दालचीनी-भूरी फुंसियाँ", "पकने पर फुंसियाँ गहरी हो जाती हैं", "गंभीर स्थिति: पत्तियों का पीला पड़ना और सूखना", "दाना भरना कम"],
+          "organic": ["प्रतिरोधी संकर किस्मों पर आमतौर पर कम; पहले निगरानी करें", "छोटे खेतों में अधिक संक्रमित निचली पत्तियाँ हटाएँ", "संतुलित पोषण दें"],
+          "chemical": ["फफूँदनाशी (जैसे मैंकोज़ेब या ट्राइज़ोल) केवल गंभीर और जल्दी होने पर", "फूल-गुच्छा (टैसलिंग) पर लेबल समय का पालन करें"],
+          "prevention": ["प्रतिरोधी संकर किस्में लगाएँ", "बहुत देर से बुवाई से बचें", "खेत की सफाई", "संतुलित उर्वरक"],
+          "severity": "low"
+        }
+      }
+    },
+    "Corn___Northern_Leaf_Blight": {
+      "crop": "Corn", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Corn (Maize) — Northern Leaf Blight",
+          "summary": "A fungal disease (Exserohilum turcicum) causing large cigar-shaped lesions, worse in moderate temperatures with heavy dew.",
+          "symptoms": ["Long grey-green to tan cigar-shaped lesions on leaves", "Lesions start on lower leaves and move up", "Severe blighting reduces photosynthesis", "Yield loss if it reaches the ear leaf early"],
+          "organic": ["Rotate crops and plough under residue", "Grow resistant hybrids", "Balanced nutrition to reduce stress"],
+          "chemical": ["Fungicides (triazole/strobilurin) at early lesion stage if severe", "Time sprays around tasseling"],
+          "prevention": ["Resistant hybrids", "Crop rotation and residue management", "Avoid continuous maize", "Scout during humid spells"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "मक्का — उत्तरी पत्ती झुलसा (नॉर्दर्न लीफ ब्लाइट)",
+          "summary": "फफूँद रोग (एक्ससेरोहिलम टर्सिकम) जो बड़े सिगार-आकार के घाव बनाता है, भारी ओस के साथ मध्यम तापमान में अधिक।",
+          "symptoms": ["पत्तियों पर लंबे भूरे-हरे से हल्के भूरे सिगार-आकार घाव", "घाव निचली पत्तियों से शुरू होकर ऊपर बढ़ते हैं", "गंभीर झुलसा प्रकाश-संश्लेषण घटाता है", "जल्दी बाली-पत्ती तक पहुँचे तो उपज हानि"],
+          "organic": ["फसल चक्र अपनाएँ और अवशेष जोतकर दबाएँ", "प्रतिरोधी संकर किस्में उगाएँ", "तनाव घटाने हेतु संतुलित पोषण"],
+          "chemical": ["गंभीर होने पर आरंभिक घाव अवस्था पर फफूँदनाशी (ट्राइज़ोल/स्ट्रोबिल्यूरिन)", "छिड़काव फूल-गुच्छा के आसपास करें"],
+          "prevention": ["प्रतिरोधी संकर किस्में", "फसल चक्र और अवशेष प्रबंधन", "लगातार मक्का से बचें", "नम मौसम में निगरानी करें"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Corn___healthy": {"crop": "Corn", "healthy": true, "translations": {"en": {"name": "Corn (Maize) — Healthy", "severity": "none"}, "hi": {"name": "मक्का — स्वस्थ", "severity": "none"}}},
+    "Grape___Black_rot": {
+      "crop": "Grape", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Grape — Black Rot",
+          "summary": "A fungal disease (Guignardia bidwellii) that can destroy the fruit crop in warm, wet weather.",
+          "symptoms": ["Tan leaf spots with dark borders and black dots (pycnidia)", "Berries shrivel into hard black mummies", "Lesions on shoots and tendrils", "Rapid fruit loss in wet years"],
+          "organic": ["Remove mummified berries and infected canes", "Copper/sulfur sprays from early shoot growth", "Open the canopy for airflow"],
+          "chemical": ["Mancozeb or Myclobutanil on a protective schedule", "Focus sprays from bloom through fruit set"],
+          "prevention": ["Vineyard sanitation (remove mummies)", "Canopy management for airflow", "Timely protective sprays in wet weather", "Resistant varieties where possible"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "अंगूर — काला सड़न (ब्लैक रॉट)",
+          "summary": "फफूँद रोग (गिनार्डिया बिडवेली) जो गर्म, गीले मौसम में फल की फसल नष्ट कर सकता है।",
+          "symptoms": ["गहरे किनारों और काले बिंदुओं (पिक्निडिया) वाले हल्के भूरे पत्ती धब्बे", "बेर सिकुड़कर सख्त काले ममी बन जाते हैं", "टहनियों और तंतुओं पर घाव", "गीले वर्षों में तेज़ी से फल हानि"],
+          "organic": ["ममीकृत बेर और संक्रमित टहनियाँ हटाएँ", "आरंभिक बढ़वार से कॉपर/गंधक छिड़काव", "हवा हेतु छतरी खोलें"],
+          "chemical": ["सुरक्षात्मक कार्यक्रम पर मैंकोज़ेब या माइक्लोब्यूटानिल", "छिड़काव फूल से फल-बनने तक केंद्रित करें"],
+          "prevention": ["बगीचे की सफाई (ममी हटाएँ)", "हवा हेतु छतरी प्रबंधन", "गीले मौसम में समय पर सुरक्षात्मक छिड़काव", "जहाँ संभव हो प्रतिरोधी किस्में"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Grape___healthy": {"crop": "Grape", "healthy": true, "translations": {"en": {"name": "Grape — Healthy", "severity": "none"}, "hi": {"name": "अंगूर — स्वस्थ", "severity": "none"}}},
+    "Rice___Brown_spot": {
+      "crop": "Rice", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Rice — Brown Spot",
+          "summary": "A fungal disease (Bipolaris oryzae) linked to nutrient-poor soils and water stress; historically a major famine-era disease.",
+          "symptoms": ["Small brown oval spots on leaves, sometimes with grey centres", "Spots on grains/glumes reducing quality", "Seedling blight in severe cases", "Worse on potassium-deficient soils"],
+          "organic": ["Correct soil fertility, especially potassium", "Use healthy, treated seed", "Balanced water management (avoid drought stress)", "Seed treatment with Trichoderma / hot water"],
+          "chemical": ["Seed treatment with recommended fungicide", "Foliar Mancozeb or a triazole if severe", "Follow local recommendations"],
+          "prevention": ["Balanced fertilisation (avoid deficiency)", "Certified, treated seed", "Good water management", "Resistant varieties"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "धान — भूरा धब्बा (ब्राउन स्पॉट)",
+          "summary": "पोषक-हीन मिट्टी और जल तनाव से जुड़ा फफूँद रोग (बाइपोलारिस ओराइज़ी); ऐतिहासिक रूप से अकाल-काल का बड़ा रोग।",
+          "symptoms": ["पत्तियों पर छोटे भूरे अंडाकार धब्बे, कभी-कभी धूसर केंद्र के साथ", "दानों/तुष पर धब्बे जो गुणवत्ता घटाते हैं", "गंभीर स्थिति में अंकुर झुलसा", "पोटैशियम-हीन मिट्टी पर अधिक"],
+          "organic": ["मिट्टी की उर्वरता, विशेषकर पोटैशियम, सुधारें", "स्वस्थ, उपचारित बीज उपयोग करें", "संतुलित जल प्रबंधन (सूखा तनाव से बचें)", "ट्राइकोडर्मा / गर्म पानी से बीज उपचार"],
+          "chemical": ["अनुशंसित फफूँदनाशी से बीज उपचार", "गंभीर होने पर पर्ण मैंकोज़ेब या ट्राइज़ोल", "स्थानीय अनुशंसाओं का पालन करें"],
+          "prevention": ["संतुलित उर्वरक (कमी से बचें)", "प्रमाणित, उपचारित बीज", "अच्छा जल प्रबंधन", "प्रतिरोधी किस्में"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Apple___Cedar_apple_rust": {
+      "crop": "Apple", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Apple — Cedar Apple Rust",
+          "summary": "A fungal disease (Gymnosporangium juniperi-virginianae) that needs both apple and nearby juniper/cedar hosts to complete its cycle; worse in wet springs.",
+          "symptoms": ["Bright yellow-orange spots on the upper leaf surface", "Spots develop small black dots, then tube-like projections underneath", "Orange lesions on fruit and twigs", "Early leaf drop in heavy infection"],
+          "organic": ["Remove nearby juniper/cedar galls within a few hundred metres if possible", "Rake and destroy fallen infected leaves", "Sulfur sprays from bud break through early fruit set", "Open the canopy by pruning for faster drying"],
+          "chemical": ["Mancozeb or Myclobutanil from pink-bud to petal-fall as per label", "Repeat during wet spring weather at label intervals", "Alternate fungicide groups to avoid resistance"],
+          "prevention": ["Plant rust-resistant apple cultivars", "Avoid planting apples next to junipers/red cedar", "Orchard sanitation (clear leaf litter)", "Protective sprays timed to spring rains"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "सेब — सीडर एप्पल रस्ट (रतुआ)",
+          "summary": "फफूँद रोग (जिम्नोस्पोरैंजियम) जिसे अपना चक्र पूरा करने के लिए सेब और पास के जूनिपर/देवदार दोनों की ज़रूरत होती है; गीले वसंत में अधिक।",
+          "symptoms": ["पत्ती की ऊपरी सतह पर चमकीले पीले-नारंगी धब्बे", "धब्बों में छोटे काले बिंदु, फिर नीचे नली जैसी संरचनाएँ", "फल और टहनियों पर नारंगी घाव", "अधिक संक्रमण में जल्दी पत्ती गिरना"],
+          "organic": ["संभव हो तो पास के जूनिपर/देवदार की गाँठें हटाएँ", "गिरी संक्रमित पत्तियाँ इकट्ठा कर नष्ट करें", "कली फूटने से आरंभिक फल तक गंधक छिड़काव", "जल्दी सूखने हेतु छँटाई कर छतरी खोलें"],
+          "chemical": ["लेबल अनुसार गुलाबी-कली से पंखुड़ी-गिरने तक मैंकोज़ेब या माइक्लोब्यूटानिल", "गीले वसंत मौसम में लेबल अंतराल पर दोहराएँ", "प्रतिरोध से बचने हेतु फफूँदनाशी बदलें"],
+          "prevention": ["रतुआ-प्रतिरोधी सेब किस्में लगाएँ", "सेब को जूनिपर/लाल देवदार के पास लगाने से बचें", "बगीचे की सफाई (पत्ती कचरा हटाएँ)", "वसंत की बारिश के अनुसार सुरक्षात्मक छिड़काव"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Cherry___Powdery_mildew": {
+      "crop": "Cherry", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Cherry — Powdery Mildew",
+          "summary": "A fungal disease (Podosphaera clandestina) that coats leaves and shoots with white powder, favoured by warm days, cool nights and moderate humidity.",
+          "symptoms": ["White powdery patches on leaves and new shoots", "Curling and distortion of young leaves", "Stunted shoot growth", "White film on fruit near harvest"],
+          "organic": ["Prune to open the canopy and improve airflow", "Spray wettable sulfur or a potassium-bicarbonate solution", "Remove and destroy infected shoots", "Avoid excess nitrogen that pushes soft growth"],
+          "chemical": ["Myclobutanil or Trifloxystrobin as per label", "Begin at first sign and repeat at label intervals", "Alternate actives to prevent resistance"],
+          "prevention": ["Resistant varieties where available", "Prune for light and airflow", "Avoid dense, over-fertilised canopies", "Monitor during warm, humid spells"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "चेरी — चूर्णिल आसिता (पाउडरी मिल्ड्यू)",
+          "summary": "फफूँद रोग (पोडोस्फेरा) जो पत्तियों और टहनियों पर सफेद चूर्ण जमा देता है; गर्म दिन, ठंडी रात और मध्यम नमी में अधिक।",
+          "symptoms": ["पत्तियों और नई टहनियों पर सफेद चूर्णिल धब्बे", "नई पत्तियों का मुड़ना और विकृत होना", "टहनियों की बढ़वार रुकना", "कटाई के पास फल पर सफेद परत"],
+          "organic": ["छतरी खोलने और हवा बढ़ाने हेतु छँटाई करें", "घुलनशील गंधक या पोटैशियम-बाइकार्बोनेट घोल छिड़कें", "संक्रमित टहनियाँ हटाकर नष्ट करें", "अधिक नाइट्रोजन से बचें जो मुलायम बढ़वार देता है"],
+          "chemical": ["लेबल अनुसार माइक्लोब्यूटानिल या ट्राइफ्लॉक्सीस्ट्रोबिन", "पहले लक्षण पर शुरू करें और लेबल अंतराल पर दोहराएँ", "प्रतिरोध रोकने हेतु दवाएँ बदलें"],
+          "prevention": ["उपलब्ध हो तो प्रतिरोधी किस्में", "प्रकाश और हवा हेतु छँटाई", "घनी, अधिक-उर्वरित छतरी से बचें", "गर्म-नम मौसम में निगरानी करें"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Corn___Gray_leaf_spot": {
+      "crop": "Corn", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Corn (Maize) — Gray Leaf Spot (Cercospora)",
+          "summary": "A fungal disease (Cercospora zeae-maydis) that produces narrow grey rectangular lesions; favoured by warm, humid weather and conservation tillage with maize residue.",
+          "symptoms": ["Narrow, rectangular grey-to-tan lesions bounded by leaf veins", "Lesions begin on lower leaves and move upward", "Severe blighting of the leaf, reducing grain fill", "Lesions may merge and kill large leaf areas"],
+          "organic": ["Rotate out of maize and plough under crop residue", "Grow resistant/tolerant hybrids", "Avoid continuous maize on the same field", "Balanced nutrition to keep plants vigorous"],
+          "chemical": ["Triazole or strobilurin fungicide at early lesion stage if severe", "Time sprays around tasseling/silking", "Alternate fungicide groups to avoid resistance"],
+          "prevention": ["Resistant hybrids", "Crop rotation and residue management", "Avoid dense planting in humid areas", "Scout lower leaves during warm, humid spells"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "मक्का — धूसर पत्ती धब्बा (ग्रे लीफ स्पॉट / सर्कोस्पोरा)",
+          "summary": "फफूँद रोग (सर्कोस्पोरा ज़िया-मेडिस) जो पतले धूसर आयताकार घाव बनाता है; गर्म-आर्द्र मौसम और मक्का अवशेष वाली कम-जुताई में अधिक।",
+          "symptoms": ["पत्ती की शिराओं से घिरे पतले, आयताकार धूसर-भूरे घाव", "घाव निचली पत्तियों से शुरू होकर ऊपर बढ़ते हैं", "गंभीर झुलसा जो दाना भरना घटाता है", "घाव मिलकर पत्ती का बड़ा भाग सुखा सकते हैं"],
+          "organic": ["मक्का से फसल चक्र बदलें और अवशेष जोतकर दबाएँ", "प्रतिरोधी/सहनशील संकर किस्में उगाएँ", "एक ही खेत में लगातार मक्का न लगाएँ", "पौधों की शक्ति हेतु संतुलित पोषण"],
+          "chemical": ["गंभीर होने पर आरंभिक घाव अवस्था पर ट्राइज़ोल या स्ट्रोबिल्यूरिन फफूँदनाशी", "छिड़काव फूल-गुच्छा/रेशम अवस्था के आसपास करें", "प्रतिरोध से बचने हेतु समूह बदलें"],
+          "prevention": ["प्रतिरोधी संकर किस्में", "फसल चक्र और अवशेष प्रबंधन", "नम क्षेत्रों में घना रोपण न करें", "गर्म-नम मौसम में निचली पत्तियाँ जाँचें"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Grape___Esca": {
+      "crop": "Grape", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Grape — Esca (Black Measles)",
+          "summary": "A complex trunk disease caused by several wood-infecting fungi; it blocks the vine's water-conducting tissue and can kill vines over several seasons.",
+          "symptoms": ["'Tiger-stripe' pattern of yellow/red bands between leaf veins", "Small dark spots ('measles') on berries, which may crack", "Sudden wilting (apoplexy) of whole vines in hot weather", "Dark streaking in the trunk wood when cut"],
+          "organic": ["Prune out and burn dead/cankered wood", "Prune in dry weather and protect large cuts", "Avoid vine stress; manage irrigation and nutrition", "Remove and destroy severely affected vines"],
+          "chemical": ["No reliable curative spray; management is cultural", "Protect pruning wounds with a recommended wound sealant/paste", "Trichoderma-based wound treatments may help where available"],
+          "prevention": ["Use clean, certified planting material", "Make pruning cuts in dry conditions and seal large wounds", "Avoid water/nutrient stress", "Train young vines carefully to limit large cuts later"],
+          "severity": "high"
+        },
+        "hi": {
+          "name": "अंगूर — एस्का (ब्लैक मीज़ल्स)",
+          "summary": "कई लकड़ी-संक्रमी फफूँदों से होने वाला जटिल तना रोग; यह बेल के जल-वाहक ऊतक को अवरुद्ध कर कई मौसमों में बेल मार सकता है।",
+          "symptoms": ["पत्ती की शिराओं के बीच पीले/लाल पट्टियों का 'बाघ-धारी' पैटर्न", "बेरों पर छोटे गहरे धब्बे ('मीज़ल्स'), जो फट सकते हैं", "गर्मी में पूरी बेल का अचानक मुरझाना", "काटने पर तने की लकड़ी में गहरी धारियाँ"],
+          "organic": ["मृत/कैंकरयुक्त लकड़ी छाँटकर जलाएँ", "सूखे मौसम में छँटाई करें और बड़े कट सुरक्षित करें", "बेल पर तनाव से बचें; सिंचाई और पोषण संभालें", "अत्यधिक प्रभावित बेलें हटाकर नष्ट करें"],
+          "chemical": ["कोई भरोसेमंद उपचारात्मक छिड़काव नहीं; प्रबंधन सांस्कृतिक है", "छँटाई घावों को अनुशंसित घाव-लेप/पेस्ट से ढकें", "जहाँ उपलब्ध हो ट्राइकोडर्मा-आधारित घाव उपचार लाभकारी"],
+          "prevention": ["स्वच्छ, प्रमाणित रोपण सामग्री उपयोग करें", "सूखी स्थिति में छँटाई और बड़े घाव सील करें", "जल/पोषण तनाव से बचें", "बाद में बड़े कट से बचने हेतु युवा बेलों को सावधानी से साधें"],
+          "severity": "high"
+        }
+      }
+    },
+    "Grape___Leaf_blight": {
+      "crop": "Grape", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Grape — Leaf Blight (Isariopsis Leaf Spot)",
+          "summary": "A fungal leaf-spot disease (Pseudocercospora vitis) that spots and blights foliage in warm, wet weather, weakening the vine.",
+          "symptoms": ["Irregular brown-to-dark angular leaf spots", "Spots enlarge and merge into blighted areas", "Yellowing and early drop of affected leaves", "Reduced vigour and sugar accumulation in fruit"],
+          "organic": ["Remove and destroy fallen infected leaves", "Improve airflow through canopy pruning", "Copper-based sprays from early infection", "Avoid overhead wetting of foliage"],
+          "chemical": ["Mancozeb or a protectant fungicide at label rate", "Repeat in prolonged wet weather", "Alternate fungicide groups to avoid resistance"],
+          "prevention": ["Vineyard sanitation (clear leaf litter)", "Canopy management for airflow and light", "Timely protective sprays in the rainy season", "Balanced nutrition to maintain vigour"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "अंगूर — पत्ती झुलसा (इसारिओप्सिस लीफ स्पॉट)",
+          "summary": "फफूँद पत्ती-धब्बा रोग (स्यूडोसर्कोस्पोरा विटिस) जो गर्म-गीले मौसम में पत्तियों पर धब्बे और झुलसा करता है, बेल को कमजोर करता है।",
+          "symptoms": ["अनियमित भूरे-से-गहरे कोणीय पत्ती धब्बे", "धब्बे बढ़कर झुलसे क्षेत्रों में मिल जाते हैं", "प्रभावित पत्तियों का पीला होकर जल्दी गिरना", "बेल की शक्ति और फल में शर्करा संचय घटना"],
+          "organic": ["गिरी संक्रमित पत्तियाँ हटाकर नष्ट करें", "छतरी छँटाई से हवा बढ़ाएँ", "आरंभिक संक्रमण से कॉपर-आधारित छिड़काव", "पत्तियों को ऊपर से गीला करने से बचें"],
+          "chemical": ["लेबल दर पर मैंकोज़ेब या सुरक्षात्मक फफूँदनाशी", "लंबे गीले मौसम में दोहराएँ", "प्रतिरोध से बचने हेतु समूह बदलें"],
+          "prevention": ["बगीचे की सफाई (पत्ती कचरा हटाएँ)", "हवा और प्रकाश हेतु छतरी प्रबंधन", "बरसात में समय पर सुरक्षात्मक छिड़काव", "शक्ति बनाए रखने हेतु संतुलित पोषण"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Orange___Citrus_greening": {
+      "crop": "Orange", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Orange — Citrus Greening (Huanglongbing, HLB)",
+          "summary": "A serious incurable bacterial disease (Candidatus Liberibacter) spread by the citrus psyllid; it slowly kills trees, so control targets the insect and infected trees.",
+          "symptoms": ["Blotchy, asymmetric yellowing (mottling) of leaves across the midrib", "Yellow shoots on an otherwise green tree", "Small, lopsided fruit that stay partly green and taste bitter", "Twig dieback and gradual tree decline"],
+          "organic": ["Remove and destroy infected trees to cut the inoculum source", "Monitor and manage citrus psyllid with yellow sticky traps", "Conserve natural psyllid predators where possible", "Keep trees vigorous with balanced nutrition and micronutrients"],
+          "chemical": ["Control the psyllid vector with recommended insecticides as per label", "Coordinate area-wide psyllid control with neighbouring orchards", "Rotate insecticide groups to avoid resistance"],
+          "prevention": ["Plant only certified disease-free nursery stock", "Inspect regularly and rogue out infected trees early", "Suppress psyllid populations, especially on new flush", "Avoid moving infected plant material between areas"],
+          "severity": "high"
+        },
+        "hi": {
+          "name": "संतरा — सिट्रस ग्रीनिंग (हुआंगलोंगबिंग, HLB)",
+          "summary": "सिट्रस सिल्ला कीट से फैलने वाला गंभीर लाइलाज जीवाणु रोग (कैंडिडेटस लिबरीबैक्टर); यह पेड़ों को धीरे-धीरे मारता है, इसलिए नियंत्रण कीट और संक्रमित पेड़ों पर केंद्रित है।",
+          "symptoms": ["मध्य-शिरा के आर-पार असमान, चितकबरा पीलापन", "हरे पेड़ पर पीली टहनियाँ", "छोटे, टेढ़े फल जो आंशिक हरे रहते और कड़वे होते हैं", "टहनियों का सूखना और पेड़ का क्रमिक पतन"],
+          "organic": ["रोग-स्रोत घटाने हेतु संक्रमित पेड़ हटाकर नष्ट करें", "पीले चिपचिपे जालों से सिट्रस सिल्ला की निगरानी और नियंत्रण करें", "संभव हो तो सिल्ला के प्राकृतिक शत्रु संरक्षित करें", "संतुलित पोषण व सूक्ष्म-तत्वों से पेड़ सशक्त रखें"],
+          "chemical": ["लेबल अनुसार अनुशंसित कीटनाशकों से सिल्ला वाहक नियंत्रित करें", "पड़ोसी बगीचों के साथ क्षेत्र-व्यापी सिल्ला नियंत्रण समन्वित करें", "प्रतिरोध से बचने हेतु कीटनाशक समूह बदलें"],
+          "prevention": ["केवल प्रमाणित रोग-मुक्त नर्सरी पौधे लगाएँ", "नियमित जाँच करें और संक्रमित पेड़ जल्दी हटाएँ", "नई कोंपलों पर सिल्ला आबादी दबाएँ", "संक्रमित पौध सामग्री एक क्षेत्र से दूसरे में न ले जाएँ"],
+          "severity": "high"
+        }
+      }
+    },
+    "Peach___Bacterial_spot": {
+      "crop": "Peach", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Peach — Bacterial Spot",
+          "summary": "A bacterial disease (Xanthomonas arboricola pv. pruni) that spots leaves and fruit, worse in warm, wet, windy weather on sandy soils.",
+          "symptoms": ["Small dark angular spots on leaves, often near the tip", "Spot centres drop out, giving a 'shot-hole' look", "Yellowing and leaf drop", "Sunken, cracked spots and pitting on fruit"],
+          "organic": ["Remove and destroy heavily infected leaves/twigs", "Copper sprays at low rates (copper can injure peach, follow label)", "Avoid overhead irrigation and working when wet", "Maintain tree vigour without excess nitrogen"],
+          "chemical": ["Copper-based bactericide on a protective schedule as per label", "Oxytetracycline sprays only where locally approved", "Begin early and repeat after rain events"],
+          "prevention": ["Plant tolerant/resistant varieties", "Site orchards with good airflow and drainage", "Avoid high-nitrogen, succulent growth", "Prune for airflow and sanitation"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "आड़ू — जीवाणु धब्बा (बैक्टीरियल स्पॉट)",
+          "summary": "जीवाणु रोग (ज़ैंथोमोनास अर्बोरिकोला) जो पत्तियों और फल पर धब्बे करता है; रेतीली मिट्टी पर गर्म, गीले, हवादार मौसम में अधिक।",
+          "symptoms": ["पत्तियों पर छोटे गहरे कोणीय धब्बे, अक्सर नोक के पास", "धब्बों का केंद्र गिरकर 'छेद' जैसा दिखना", "पीलापन और पत्ती गिरना", "फल पर धँसे, फटे धब्बे और गड्ढे"],
+          "organic": ["अधिक संक्रमित पत्तियाँ/टहनियाँ हटाकर नष्ट करें", "कम दर पर कॉपर छिड़काव (कॉपर आड़ू को क्षति दे सकता है, लेबल देखें)", "ऊपर से सिंचाई और गीले में काम से बचें", "अधिक नाइट्रोजन के बिना पेड़ की शक्ति बनाए रखें"],
+          "chemical": ["लेबल अनुसार सुरक्षात्मक कार्यक्रम पर कॉपर-आधारित जीवाणुनाशी", "ऑक्सीटेट्रासाइक्लिन केवल जहाँ स्थानीय रूप से स्वीकृत हो", "जल्दी शुरू करें और बारिश के बाद दोहराएँ"],
+          "prevention": ["सहनशील/प्रतिरोधी किस्में लगाएँ", "अच्छी हवा और जल निकासी वाली जगह चुनें", "अधिक-नाइट्रोजन, रसीली बढ़वार से बचें", "हवा और सफाई हेतु छँटाई"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Pepper_bell___Bacterial_spot": {
+      "crop": "Pepper (Bell)", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Bell Pepper — Bacterial Spot",
+          "summary": "A bacterial disease (Xanthomonas) spread by rain-splash, seed and handling; worse in warm, wet weather and a major cause of defoliation and fruit blemish.",
+          "symptoms": ["Small water-soaked spots on leaves that turn brown with a yellow halo", "Spots may dry and tear, giving a ragged look", "Raised, scabby, cracked spots on fruit", "Leaf drop exposing fruit to sunscald"],
+          "organic": ["Use pathogen-free, treated seed and healthy transplants", "Remove and destroy infected debris", "Copper-based sprays from early infection", "Avoid overhead irrigation and handling wet plants"],
+          "chemical": ["Copper hydroxide + Mancozeb tank mix as per label", "Streptomycin/antibiotic sprays only where locally approved", "Repeat after rain and at label intervals"],
+          "prevention": ["Hot-water or certified seed treatment", "Rotate away from pepper/tomato for 2-3 years", "Avoid overhead irrigation; keep foliage dry", "Disinfect tools, stakes and hands"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "शिमला मिर्च — जीवाणु धब्बा (बैक्टीरियल स्पॉट)",
+          "summary": "बारिश के छींटों, बीज और छूने से फैलने वाला जीवाणु रोग (ज़ैंथोमोनास); गर्म-गीले मौसम में अधिक, पत्ती-गिरने और फल-दाग का बड़ा कारण।",
+          "symptoms": ["पत्तियों पर छोटे जलसिक्त धब्बे जो पीले घेरे के साथ भूरे हो जाते हैं", "धब्बे सूखकर फट सकते हैं, फटी-पुरानी दिखावट", "फल पर उभरे, खुरदरे, फटे धब्बे", "पत्ती गिरने से फल पर धूप-झुलसा"],
+          "organic": ["रोगमुक्त, उपचारित बीज और स्वस्थ पौध उपयोग करें", "संक्रमित अवशेष हटाकर नष्ट करें", "आरंभिक संक्रमण से कॉपर-आधारित छिड़काव", "ऊपर से सिंचाई और गीले पौधे छूने से बचें"],
+          "chemical": ["लेबल अनुसार कॉपर हाइड्रॉक्साइड + मैंकोज़ेब मिश्रण", "स्ट्रेप्टोमाइसिन/एंटीबायोटिक केवल जहाँ स्थानीय रूप से स्वीकृत हो", "बारिश के बाद और लेबल अंतराल पर दोहराएँ"],
+          "prevention": ["गर्म पानी या प्रमाणित बीज उपचार", "मिर्च/टमाटर से 2-3 साल फसल चक्र बदलें", "ऊपर से सिंचाई से बचें; पत्तियाँ सूखी रखें", "औज़ार, सहारे और हाथ कीटाणुरहित करें"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Squash___Powdery_mildew": {
+      "crop": "Squash", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Squash — Powdery Mildew",
+          "summary": "A very common fungal disease (Podosphaera xanthii) that coats leaves with white powder; thrives in warm, dry days with humid nights and moderate shade.",
+          "symptoms": ["White powdery spots on upper and lower leaf surfaces and stems", "Spots merge to cover whole leaves", "Leaves yellow, brown and die early", "Reduced yield and sun-scalded fruit from loss of leaf cover"],
+          "organic": ["Spray wettable sulfur, potassium bicarbonate, or diluted milk solution early", "Remove and destroy the worst affected leaves", "Improve spacing and airflow; grow in full sun", "Avoid excess nitrogen"],
+          "chemical": ["Myclobutanil or a strobilurin fungicide at first sign as per label", "Repeat at label intervals during pressure", "Alternate fungicide groups to avoid resistance"],
+          "prevention": ["Grow resistant/tolerant varieties", "Wide spacing and full-sun sites for airflow", "Scout leaf undersides regularly", "Avoid overhead shade and crowding"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "कद्दू/लौकी — चूर्णिल आसिता (पाउडरी मिल्ड्यू)",
+          "summary": "बहुत आम फफूँद रोग (पोडोस्फेरा ज़ैंथी) जो पत्तियों पर सफेद चूर्ण जमा देता है; गर्म-सूखे दिन, नम रात और हल्की छाया में अधिक।",
+          "symptoms": ["पत्तियों की ऊपरी-निचली सतह और तनों पर सफेद चूर्णिल धब्बे", "धब्बे मिलकर पूरी पत्ती ढक लेते हैं", "पत्तियाँ पीली-भूरी होकर जल्दी मर जाती हैं", "पत्ती-आवरण घटने से उपज कम और फल पर धूप-झुलसा"],
+          "organic": ["जल्दी घुलनशील गंधक, पोटैशियम बाइकार्बोनेट या पतला दूध घोल छिड़कें", "सबसे प्रभावित पत्तियाँ हटाकर नष्ट करें", "दूरी और हवा बढ़ाएँ; पूरी धूप में उगाएँ", "अधिक नाइट्रोजन से बचें"],
+          "chemical": ["लेबल अनुसार पहले लक्षण पर माइक्लोब्यूटानिल या स्ट्रोबिल्यूरिन फफूँदनाशी", "दबाव के दौरान लेबल अंतराल पर दोहराएँ", "प्रतिरोध से बचने हेतु समूह बदलें"],
+          "prevention": ["प्रतिरोधी/सहनशील किस्में उगाएँ", "हवा हेतु अधिक दूरी और पूरी-धूप वाली जगह", "पत्ती की निचली सतह नियमित जाँचें", "छाया और भीड़ से बचें"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Strawberry___Leaf_scorch": {
+      "crop": "Strawberry", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Strawberry — Leaf Scorch",
+          "summary": "A fungal disease (Diplocarpon earlianum) that spots and scorches foliage in warm, wet weather, weakening plants and reducing runners and yield.",
+          "symptoms": ["Many small dark purple spots on the upper leaf surface", "Spots stay small but merge; leaf edges look scorched/reddish-brown", "No pale centre (unlike leaf spot), leaves dry up", "Reduced vigour, fewer runners and berries"],
+          "organic": ["Remove and destroy old, infected leaves after harvest (renovation)", "Improve airflow with proper spacing", "Avoid overhead irrigation; water at the base", "Use clean, disease-free runners/transplants"],
+          "chemical": ["Captan or a protectant fungicide at label rate", "Begin at early leaf growth and repeat during wet weather", "Alternate fungicide groups to avoid resistance"],
+          "prevention": ["Plant certified disease-free material", "Resistant varieties where available", "Wider spacing and good drainage", "Post-harvest leaf renovation and sanitation"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "स्ट्रॉबेरी — पत्ती झुलसन (लीफ स्कॉर्च)",
+          "summary": "फफूँद रोग (डिप्लोकार्पन अर्लियानम) जो गर्म-गीले मौसम में पत्तियों पर धब्बे और झुलसन करता है, पौधों को कमजोर कर रनर व उपज घटाता है।",
+          "symptoms": ["पत्ती की ऊपरी सतह पर कई छोटे गहरे बैंगनी धब्बे", "धब्बे छोटे रहकर मिलते हैं; पत्ती किनारे झुलसे/लाल-भूरे दिखते हैं", "कोई हल्का केंद्र नहीं (पत्ती-धब्बे से भिन्न), पत्तियाँ सूख जाती हैं", "शक्ति घटना, कम रनर और बेर"],
+          "organic": ["कटाई के बाद पुरानी, संक्रमित पत्तियाँ हटाकर नष्ट करें", "उचित दूरी से हवा बढ़ाएँ", "ऊपर से सिंचाई से बचें; जड़ के पास पानी दें", "स्वच्छ, रोगमुक्त रनर/पौध उपयोग करें"],
+          "chemical": ["लेबल दर पर कैप्टान या सुरक्षात्मक फफूँदनाशी", "आरंभिक पत्ती-बढ़वार से शुरू करें और गीले मौसम में दोहराएँ", "प्रतिरोध से बचने हेतु समूह बदलें"],
+          "prevention": ["प्रमाणित रोगमुक्त सामग्री लगाएँ", "उपलब्ध हो तो प्रतिरोधी किस्में", "अधिक दूरी और अच्छी जल निकासी", "कटाई-पश्चात पत्ती नवीनीकरण और सफाई"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Tomato___Septoria_leaf_spot": {
+      "crop": "Tomato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Tomato — Septoria Leaf Spot",
+          "summary": "A common fungal disease (Septoria lycopersici) that causes heavy leaf spotting and defoliation in warm, wet weather, usually starting on lower leaves.",
+          "symptoms": ["Many small circular spots with dark borders and grey/tan centres", "Tiny black dots (fruiting bodies) visible in spot centres", "Spots start on lower leaves and move up", "Heavy defoliation exposing fruit to sunscald"],
+          "organic": ["Remove and destroy infected lower leaves early", "Mulch to stop soil splashing spores onto leaves", "Copper or neem sprays at first sign", "Improve airflow by staking and pruning"],
+          "chemical": ["Mancozeb 75% WP @ 2 g/litre or Chlorothalonil @ 2 g/litre", "Repeat every 7-10 days in wet weather", "Alternate fungicide groups to avoid resistance"],
+          "prevention": ["Crop rotation away from tomato", "Stake and prune for airflow; water at the base", "Remove crop debris after harvest", "Use clean seed and transplants"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "टमाटर — सेप्टोरिया पत्ती धब्बा",
+          "summary": "आम फफूँद रोग (सेप्टोरिया लाइकोपर्सिसी) जो गर्म-गीले मौसम में भारी पत्ती-धब्बे और पत्ती-गिरना करता है, आमतौर पर निचली पत्तियों से शुरू।",
+          "symptoms": ["गहरे किनारों और धूसर/हल्के केंद्र वाले कई छोटे गोल धब्बे", "धब्बों के केंद्र में छोटे काले बिंदु (बीजाणु-अंग)", "धब्बे निचली पत्तियों से शुरू होकर ऊपर बढ़ते हैं", "भारी पत्ती-गिरने से फल पर धूप-झुलसा"],
+          "organic": ["संक्रमित निचली पत्तियाँ जल्दी हटाकर नष्ट करें", "मल्च करें ताकि मिट्टी से बीजाणु पत्तियों पर न उछलें", "पहले लक्षण पर कॉपर या नीम छिड़काव", "सहारा और छँटाई से हवा बढ़ाएँ"],
+          "chemical": ["मैंकोज़ेब 75% WP @ 2 ग्राम/लीटर या क्लोरोथैलोनिल @ 2 ग्राम/लीटर", "गीले मौसम में हर 7-10 दिन दोहराएँ", "प्रतिरोध से बचने हेतु समूह बदलें"],
+          "prevention": ["टमाटर से फसल चक्र बदलें", "सहारा-छँटाई से हवा; जड़ के पास पानी", "कटाई के बाद फसल अवशेष हटाएँ", "स्वच्छ बीज और पौध उपयोग करें"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Tomato___Spider_mites": {
+      "crop": "Tomato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Tomato — Spider Mites (Two-spotted)",
+          "summary": "Damage from a tiny pest, not a fungus: two-spotted spider mites (Tetranychus urticae) that suck sap; they explode in hot, dry, dusty conditions.",
+          "symptoms": ["Fine pale/yellow stippling (tiny dots) on leaves", "Fine silky webbing on leaf undersides and between leaves", "Leaves bronze, dry and curl in heavy infestation", "Stunted growth and leaf drop"],
+          "organic": ["Spray a strong jet of water to knock mites off undersides", "Neem oil or insecticidal soap, covering leaf undersides, repeat every 5-7 days", "Conserve predatory mites and ladybirds (avoid broad-spectrum sprays)", "Avoid dust and water stress; keep plants well watered"],
+          "chemical": ["Use a specific miticide (acaricide) as per label, not a general insecticide", "Repeat to catch newly hatched mites; rotate actives", "Avoid overuse of pyrethroids, which can worsen mite outbreaks"],
+          "prevention": ["Keep plants well watered and dust-free", "Scout leaf undersides early in hot, dry spells", "Encourage natural predators", "Remove heavily infested leaves promptly"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "टमाटर — मकड़ी घुन (दो-धब्बा स्पाइडर माइट)",
+          "summary": "यह फफूँद नहीं बल्कि एक छोटे कीट से होने वाली क्षति है: दो-धब्बा मकड़ी घुन (टेट्रानाइकस अर्टिकी) जो रस चूसते हैं; गर्म, सूखी, धूल भरी स्थिति में तेज़ी से बढ़ते हैं।",
+          "symptoms": ["पत्तियों पर महीन हल्के/पीले बिंदु (स्टिपलिंग)", "पत्ती की निचली सतह और पत्तियों के बीच महीन रेशमी जाल", "अधिक प्रकोप में पत्तियाँ कांस्य-रंग, सूखी और मुड़ी", "बढ़वार रुकना और पत्ती गिरना"],
+          "organic": ["निचली सतह से घुन हटाने हेतु तेज़ पानी की धार मारें", "नीम तेल या कीटनाशी साबुन, निचली सतह ढकते हुए, हर 5-7 दिन दोहराएँ", "शिकारी घुन और लेडीबर्ड संरक्षित करें (व्यापक छिड़काव से बचें)", "धूल और जल-तनाव से बचें; पौधों को पर्याप्त पानी दें"],
+          "chemical": ["लेबल अनुसार विशिष्ट घुननाशी (एकारिसाइड) उपयोग करें, सामान्य कीटनाशी नहीं", "नव-जन्मे घुन हेतु दोहराएँ; दवाएँ बदलें", "पायरेथ्रॉइड का अधिक उपयोग न करें, यह घुन प्रकोप बढ़ा सकता है"],
+          "prevention": ["पौधों को पर्याप्त पानी और धूल-रहित रखें", "गर्म-सूखे मौसम में निचली सतह जल्दी जाँचें", "प्राकृतिक शत्रु बढ़ाएँ", "अधिक प्रभावित पत्तियाँ तुरंत हटाएँ"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Tomato___Target_Spot": {
+      "crop": "Tomato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Tomato — Target Spot",
+          "summary": "A fungal disease (Corynespora cassiicola) that spots leaves, stems and fruit in warm, humid weather and can cause serious defoliation.",
+          "symptoms": ["Small brown spots that enlarge with concentric rings (target-like)", "Spots on leaves, stems and fruit", "Sunken circular lesions on fruit", "Defoliation reducing yield and exposing fruit"],
+          "organic": ["Remove and destroy infected leaves and debris", "Improve airflow by staking and pruning", "Copper or neem sprays at first sign", "Avoid overhead irrigation and leaf wetness"],
+          "chemical": ["Mancozeb or Chlorothalonil @ 2 g/litre as per label", "Repeat every 7-10 days in humid weather", "Alternate fungicide groups to avoid resistance"],
+          "prevention": ["Crop rotation away from tomato", "Wider spacing and good airflow", "Water at the base, keep foliage dry", "Field sanitation after harvest"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "टमाटर — टारगेट स्पॉट",
+          "summary": "फफूँद रोग (कोराइनेस्पोरा कैसीकोला) जो गर्म-आर्द्र मौसम में पत्तियों, तनों और फल पर धब्बे करता है और गंभीर पत्ती-गिरना कर सकता है।",
+          "symptoms": ["छोटे भूरे धब्बे जो संकेंद्रित छल्लों के साथ बढ़ते हैं (निशाना जैसा)", "पत्तियों, तनों और फल पर धब्बे", "फल पर धँसे गोल घाव", "पत्ती-गिरने से उपज घटना और फल खुलना"],
+          "organic": ["संक्रमित पत्तियाँ और अवशेष हटाकर नष्ट करें", "सहारा और छँटाई से हवा बढ़ाएँ", "पहले लक्षण पर कॉपर या नीम छिड़काव", "ऊपर से सिंचाई और पत्ती गीलापन से बचें"],
+          "chemical": ["लेबल अनुसार मैंकोज़ेब या क्लोरोथैलोनिल @ 2 ग्राम/लीटर", "आर्द्र मौसम में हर 7-10 दिन दोहराएँ", "प्रतिरोध से बचने हेतु समूह बदलें"],
+          "prevention": ["टमाटर से फसल चक्र बदलें", "अधिक दूरी और अच्छी हवा", "जड़ के पास पानी, पत्तियाँ सूखी रखें", "कटाई के बाद खेत की सफाई"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Tomato___Tomato_mosaic_virus": {
+      "crop": "Tomato", "healthy": false,
+      "translations": {
+        "en": {
+          "name": "Tomato — Mosaic Virus (ToMV)",
+          "summary": "A very stable viral disease (Tomato mosaic virus) spread mainly by handling, tools, seed and plant debris; there is no cure, so control is sanitation and prevention.",
+          "symptoms": ["Light/dark green mosaic mottling on leaves", "Leaves curl, narrow or become fern-like and distorted", "Stunted plants and uneven fruit ripening", "Internal browning or blotchy ripening of fruit"],
+          "organic": ["Remove and destroy infected plants promptly", "Wash hands and disinfect tools; avoid tobacco use near plants", "Do not work from infected to healthy plants", "Control weeds and clear plant debris"],
+          "chemical": ["No chemical cures a virus; sprays do not help the virus itself", "Manage any insect carriers only if advised locally", "Focus resources on sanitation and resistant varieties"],
+          "prevention": ["Use certified virus-free, resistant/tolerant seed and transplants", "Disinfect tools, stakes and hands (e.g. with a milk or bleach solution)", "Avoid handling plants after tobacco; wash thoroughly", "Rotate and remove infected debris between crops"],
+          "severity": "medium"
+        },
+        "hi": {
+          "name": "टमाटर — मोज़ेक वायरस (ToMV)",
+          "summary": "बहुत स्थिर विषाणु रोग (टमाटर मोज़ेक वायरस) जो मुख्यतः छूने, औज़ार, बीज और अवशेष से फैलता है; इलाज नहीं है, इसलिए नियंत्रण सफाई और रोकथाम है।",
+          "symptoms": ["पत्तियों पर हल्के/गहरे हरे मोज़ेक चितकबरे धब्बे", "पत्तियाँ मुड़ना, पतली या फर्न-जैसी विकृत होना", "बौने पौधे और असमान फल पकना", "फल में अंदरूनी भूरापन या धब्बेदार पकना"],
+          "organic": ["संक्रमित पौधे तुरंत हटाकर नष्ट करें", "हाथ धोएँ और औज़ार कीटाणुरहित करें; पौधों के पास तंबाकू से बचें", "संक्रमित से स्वस्थ पौधों की ओर काम न करें", "खरपतवार नियंत्रित करें और अवशेष हटाएँ"],
+          "chemical": ["कोई रसायन विषाणु को ठीक नहीं करता; छिड़काव विषाणु पर असर नहीं करता", "कोई कीट-वाहक हो तो केवल स्थानीय सलाह पर नियंत्रित करें", "संसाधन सफाई और प्रतिरोधी किस्मों पर लगाएँ"],
+          "prevention": ["प्रमाणित विषाणु-मुक्त, प्रतिरोधी/सहनशील बीज और पौध उपयोग करें", "औज़ार, सहारे और हाथ कीटाणुरहित करें (दूध या ब्लीच घोल से)", "तंबाकू के बाद पौधे न छुएँ; अच्छी तरह धोएँ", "फसलों के बीच चक्र और संक्रमित अवशेष हटाएँ"],
+          "severity": "medium"
+        }
+      }
+    },
+    "Blueberry___healthy": {"crop": "Blueberry", "healthy": true, "translations": {"en": {"name": "Blueberry — Healthy", "severity": "none"}, "hi": {"name": "ब्लूबेरी — स्वस्थ", "severity": "none"}}},
+    "Cherry___healthy": {"crop": "Cherry", "healthy": true, "translations": {"en": {"name": "Cherry — Healthy", "severity": "none"}, "hi": {"name": "चेरी — स्वस्थ", "severity": "none"}}},
+    "Peach___healthy": {"crop": "Peach", "healthy": true, "translations": {"en": {"name": "Peach — Healthy", "severity": "none"}, "hi": {"name": "आड़ू — स्वस्थ", "severity": "none"}}},
+    "Pepper_bell___healthy": {"crop": "Pepper (Bell)", "healthy": true, "translations": {"en": {"name": "Bell Pepper — Healthy", "severity": "none"}, "hi": {"name": "शिमला मिर्च — स्वस्थ", "severity": "none"}}},
+    "Raspberry___healthy": {"crop": "Raspberry", "healthy": true, "translations": {"en": {"name": "Raspberry — Healthy", "severity": "none"}, "hi": {"name": "रसभरी — स्वस्थ", "severity": "none"}}},
+    "Soybean___healthy": {"crop": "Soybean", "healthy": true, "translations": {"en": {"name": "Soybean — Healthy", "severity": "none"}, "hi": {"name": "सोयाबीन — स्वस्थ", "severity": "none"}}},
+    "Strawberry___healthy": {"crop": "Strawberry", "healthy": true, "translations": {"en": {"name": "Strawberry — Healthy", "severity": "none"}, "hi": {"name": "स्ट्रॉबेरी — स्वस्थ", "severity": "none"}}}
+  }
+}
