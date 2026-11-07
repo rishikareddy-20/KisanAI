@@ -1,0 +1,11 @@
+# Optional dependencies for free-text symptom search (backend/rag/build_index.py).
+# The app works without these; the retriever falls back to direct class lookup
+# and keyword matching.
+#
+# Install with:  pip install -r backend/requirements-rag.txt
+#
+# Note: this pulls in torch (large, ~2 GB). faiss-cpu >= 1.9.0 is required for
+# NumPy 2.x compatibility (1.8.x pins numpy < 2.0 and will conflict).
+
+sentence-transformers>=3.1.1
+faiss-cpu>=1.9.0
